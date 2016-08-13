@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html id="htmlTag">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-Up/Login Form</title>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../files/login/css/normalize.css">
+    <link rel="stylesheet" href="../files/login/css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <meta name="google-signin-client_id" content="360785064192-idqsajfiss7kivd2gi0uscqm3jrrntr0.apps.googleusercontent.com">
+</head>
+
+<body>
+<div id="body">
+	
+	<div  class="form">
+			  <ul class="tab-group">
+			    <li class="tab active"><a href="#signup">Sign Up</a></li>
+			    <li class="tab"><a href="#login">Log In</a></li>
+			  </ul>
+			  
+			  <div class="tab-content">
+			    <div id="signup">   
+			      <h1>Sign Up for Free</h1>
+			      
+			      <form id="form" action="http://localhost:8080/OfficeSpace/web/getStarted" method="post">
+			      
+			      <div class="top-row">
+			        <div class="field-wrap">
+			          <label>
+			            First Name<span class="req">*</span>
+			          </label>
+			          <input name="first_name" id="first_name" type="text" required autocomplete="off" />
+			        </div>
+			    
+			        <div class="field-wrap">
+			          <label>
+			            Last Name<span class="req">*</span>
+			          </label>
+			          <input name="last_name" id="last_name" type="text"required autocomplete="off"/>
+			        </div>
+			      </div>
+			
+			      <div class="field-wrap">
+			        <label>
+			          Email Address<span class="req">*</span>
+			        </label>
+			        <input name="email_id" id="email_id" type="email"required autocomplete="off"/>
+			      </div>
+			      
+			      <div class="field-wrap">
+			        <label>
+			          Contact Number<span class="req">*</span>
+			        </label>
+			        <input name="contact_number" id="contact_number" type="tel"required autocomplete="off"/>
+			      </div>
+
+			      <div class="field-wrap">
+			        <label>
+			          Set A Password<span class="req">*</span>
+			        </label>
+			        <input name="pass_word" id="pass_word" type="password"required autocomplete="off"/>
+			      </div>
+			      
+			      <div class="field-wrap">
+			        <label>
+			          Confirm Password<span class="req">*</span>
+			        </label>
+			        <input name="confirm_pass_word" id="confirm_pass_word" type="password"required autocomplete="off"/>
+			      </div>
+
+			      <div class="field-wrap">
+			        <label>
+			          User Type<span class="req">*</span>
+			        </label>
+					<select name="user_role" id="user_role">
+					  <option value="supervisor">Supervisor</option>
+					  <option value="employee">Employee</option>
+					</select>
+			      </div> 
+
+			      <button id="getStarted" type="submit" class="button button-block"" />Get Started</button>
+
+		      </form>
+			
+			    </div>
+			    
+			    <div id="login">   
+			      <h1>Welcome Back!</h1>
+			      
+			      <form id="loginForm" enctype="application/x-www-form-urlencoded" action="http://localhost:8080/OfficeSpace/web/login" method="post">
+			      
+			        <div class="field-wrap">
+			        <label>
+			          Email Address<span class="req">*</span>
+			        </label>
+			        <input name="loginEmail_id" id="loginEmail_id" type="email"required autocomplete="off"/>
+			      </div>
+			      
+			      <div class="field-wrap">
+			        <label>
+			          Password<span class="req">*</span>
+			        </label>
+			        <input name="loginPass_word" id="loginEmail_id" type="password"required autocomplete="off"/>
+			      </div>
+			      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+			      <a href="#" onclick="signOut();">Sign out</a>
+			      <p class="forgot"><a href="#">Forgot Password?</a></p>
+			      
+			      <button id="loginButton" class="button button-block">Log In</button>
+			      
+			      </form>
+				
+			    </div>
+			    
+			  </div><!-- tab-content -->
+			      
+	</div> <!-- /form -->
+
+	<div id="header">
+		<h1 id="title"> OfficeSpace </h1>
+			<div id="homeButton" class="buttonDiv"> <p class="buttonText">Home<p></div>
+		<div id="statusBar">
+			<p id="headerItem"></p>
+		</div>
+	</div>   
+    
+ </div>
+ <script src="https://apis.google.com/js/platform.js" async defer></script>
+ <script type="text/javascript" src="../javaScript/login.js"></script>
+ 
+ </body>
+ 
+ 
+
+<script type="text/javascript" src="../javaScript/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="../files/login/js/forgotPassword.js"></script>
+
+</html>

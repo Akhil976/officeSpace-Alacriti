@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- change the path.  -->
+	<script type="text/javascript" src="../javaScript/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="../javaScript/canvasjs-1.8.1/canvasjs.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/inventory.css">
+	<meta charset="UTF-8">
+	<title>Inventory Management</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+	    $(".sta").click(function(){
+	        $("#stationary").slideToggle("fast");
+	    });
+	});
+</script>
+
+
+	<div id="sideMenu">
+	<div class="menuHeader sta" >Stationary</div>
+	<div id="stationary">
+			<div id="pens" class="menuItem one" >Pens</div>
+			<div id="markers" class="menuItem one" >Markers</div>
+			<div id="notes" class="menuItem one" >Notes</div>
+			<div id="pencils" class="menuItem one" >Pencils</div>
+			<div id="erasers" class="menuItem one" >Erasers</div>
+			<div id="dusters" class="menuItem one" >Dusters</div>
+	</div>
+		<div class="menuHeader">System</div>
+			<div id="mouses" class="menuItem">Mouses</div>
+			<div id="desktops" class="menuItem">Desktops</div>
+			<div id="cpus" class="menuItem">CPUs</div>
+			<div id="headsets" class="menuItem">HeadSets</div>
+		<div class="menuHeader">Cleaning</div>
+			<div id="tissues" class="menuItem">Tissues</div>
+			<div id="handwash" class="menuItem">HandWash</div>
+			<div id="sopes" class="menuItem">Soaps</div>
+			<div id="liquides" class="menuItem">Liquides</div>
+			<div id="brushes" class="menuItem">Brushes</div>
+		<div class="menuHeader">Pantry</div>
+			<div id="breads" class="menuItem">Bread</div>
+			<div id="jams" class="menuItem">Jam</div>
+			<div id="buscuits" class="menuItem">Biscuits</div>
+			<div id="coffeePowder" class="menuItem">CoffeePowder</div>
+			<div id="teaPowder" class="menuItem">TeaPowder</div>
+			<div id="maggiePackets" class="menuItem">MaggiPackets</div>
+			<div class="menuItem">PaperGlases</div>
+		<div style="height:50px;"></div>
+	</div>
+	
+	<div id="container">
+
+		<div id="status">
+			<p>Current Status</p>
+			<div id="outerBar">
+				<div id="innerBar">
+					<div id="dangerMarker" ></div>
+				</div>
+			</div>
+			<div id="barIndex">
+				<p id="dangerMark"></p>
+			</div>
+			
+			<div id="statusCards">
+				<div class="statusCard">
+					<p class="statsCardHeader">Available Items</p>
+					<p class="statusCardNumber">20</p>
+				</div>
+				<div class="statusCard">
+					<p class="statsCardHeader">Inventory Capacity</p>
+					<p class="statusCardNumber">100</p>
+				</div>
+				<div class="statusCard">
+					<p class="statsCardHeader">Fill Percentage</p>
+					<p class="statusCardNumber">20%</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="editDiv">
+	
+			<p id="updateInventory">Update Inventory<p>
+			<div class="editDivCard">
+				<p class="editDivCardHeader">Update Inventory</p>
+				<select id="updateAction" name="updateAction" id="user_role">
+				  <option>Choose</option>
+				  <option value="add">Add</option>
+				  <option value="remove">Remove</option>
+				</select><br>
+				<input id ="updateNumber" name="updateNumber" type="number"/><br>
+				<input id="doUpdateInventory" type="button" value="Update">
+		</div>
+			<div class="editDivCard">
+				<p class="editDivCardHeader">Update Capacity</p>
+				<p class="plusMinus">Enter New Capacity</p><br>
+				<input id ="updateCapacity" name="updateCapaciry" type="number"/><br>
+				<input id="doUpdateCapaciry" type="button" value="Update">
+			</div>
+			<div class="editDivCard">
+				<p class="editDivCardHeader">Add Item</p>
+				<select id="category" name="category" id="user_role">
+						  <option>Category</option>
+						  <option value="stationary">Stationary</option>
+						  <option value="pantry">Pantry</option>
+						  <option value="cleaning">Cleaning</option>
+						  <option value="system">System</option>
+				</select><br>
+				<input id ="addItem" name="addItem" type="text"/> <br>
+				<input id ="maxCapacity" name="maxCapacity" type="number"/> <br>
+				<input id="doAddItem" type="button" value="Add Item">
+				
+			</div>
+		</div>
+	
+		<div id="analytics">
+			
+<!-- 			<div id="analyticsMenu">
+				<div id="leftMenu">
+					<select id="analyticsBy" name="analyticsBy">
+						  <option>AnalyticsBy</option>
+						  <option value="day">Day</option>
+						  <option value="week">Week</option>
+						  <option value="month">Month</option>
+						  <option value="year">Year</option>
+					</select><br>
+					<div id="calBox">
+						<input type="date" id="alalyticsCal">	
+					</div>
+					<input type="button" id="doAnalytics" value="Go">
+					
+				</div>
+				<div id="analyticsTitle">
+					<p>Analytics</p> 
+				</div> -->
+				
+						   <style>
+		   		.row{
+		   			width:900px;
+		   			height:50px;
+		   			border:0px solid black;
+		   		}
+		   		.item{
+		   			
+		   			height:35px;
+		   			padding-top:15px;
+		   			width:200px;
+		   			float:left;
+		   			font-family: sans-serif;
+		   			font-size: 20px;
+		   			text-align: center;
+		   			background-color: #cccccc;
+		   		}
+		   		#pageBox{
+		   			border:1px solid black;
+		   			width:800px;
+		   			height:40px;
+		   		}
+		   		.clear{
+		   			clear: both;
+		   		}
+		   		.numberDiv{
+		   			width:20px;
+		   			height:20px;
+		   			background-color:gray;
+		   			margin-top: 10px;
+		   			margin-left: 10px;
+		   			text-align: center;
+		   			color: black;
+		   		}
+		   </style>
+		   
+			<div id="tableHead" class="headRow" style="color:green">
+				<div class="item">Item Id </div>
+				<div class="item">Category Id </div>
+				<div class="item">Date </div>
+				<div class="item">Consume Quantity </div>
+			</div>
+			<div id="uniq_page" class="row">
+				<div class="item">100 </div>
+				<div class="item">200 </div>
+				<div class="item">1234 </div>
+				<div class="item">12345 </div>
+			</div>
+			<div class="clear"></div>
+			<div id="pageBox">
+				<div class="numberDiv">1</div>
+			</div>
+				
+				
+		   </div>
+		   
+
+			
+			
+			
+			
+			
+			
+			
+				
+<!-- 		<div id="graph">
+			<p id="graphHeader"> Graphical Analysis</p>
+				
+				<div id="graphMenu">
+						<div class="graphMenuHead">Tyme Span</div>
+							<select id="graphAnalyticsBy" name="graphAnalyticsBy">
+								  <option>AnalyticsBy</option>
+								  <option value="week">Week</option>
+								  <option value="month">Month</option>
+								  <option value="year">Year</option>
+							</select><br>
+							<div id="graphCalBox">
+							<input type="date" id="graphAnalyticsCal">	
+							</div>
+							<input type="button" id="doGraphAnalytics" value="Generate">
+						
+						<div class="graphMenuHead">Graph Type</div>
+							<div id="column" class="graphMenuItem" >Column</div>
+							<div id="line"class="graphMenuItem">line</div>
+							<div id="area" class="graphMenuItem">area</div>
+							<div id="pie" class="graphMenuItem">pie</div>
+				</div>
+		<div id="chartContainer"></div> -->
+		
+<!-- 		
+		<script type="text/javascript">
+		$("#doGraphAnalytics").click(function(){
+			alert("doGraph Analytics clicked");
+			var graphAnalyticsBy = $("#graphAnalyticsBy").val();
+			var graphCalValue = $("#graphAnalalyticsCal").val();
+			alert(graphCalValue);
+			alert("http://localhost:8080/OfficeSpace/web/graphAnalytics/"+categoryId+"/"+itemId+"/"+graphAnalyticsBy+"/"+graphCalValue);
+			$.ajax({
+		    	type: "POST",
+				url: "http://localhost:8080/OfficeSpace/web/graphAnalytics/"+categoryId+"/"+itemId+"/"+graphAnalyticsBy+"/"+graphCalValue,
+				success: function(result){
+		    		$("#graph").html(result);
+		    	}
+		    });
+			generateGraph();
+			clearTimeSpan();
+		});
+		</script>
+		 -->
+		
+		
+		</div>
+
+
+
+
+
+
+	
+		<script type="text/javascript" src="../javaScript/inventory.js"></script>
+		<script type="text/javascript">generateGraph();</script>
+		<div id ="test"> </div>
+
+	</div>
+	
+	<div id="header">
+		<h1 id="title"> OfficeSpace </h1>
+			<div class="buttonDiv" style="background-color: #4682B4;"> <p class="buttonText">LogOut<p></div>
+		<div id="statusBar">
+			<p id="headerItem">Pens</p>
+		</div>
+	</div>
+
+	
+</body>
+</html>

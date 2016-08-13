@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	body{
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+	#header{
+		border: 1px solid white;
+		position: fixed;
+		width:1349px;
+		height: 60px;
+		top: 0px;
+		left: 0px;
+		box-shadow: 0px 0px 10px gray;
+		background-color: white;
+	}
+	#header>#title{
+		color: gray;
+		margin-top: 10px;
+		margin-left: 10px;
+		text-shadow: 0px 0px 2px black;
+		font-family: sans-serif;
+		font-size: 35px;
+		float: left;
+	}
+	#header>.menu{
+		color: gray;
+		font-family: sans-serif;
+		display: inline-block;
+		margin-left: 60px;
+		margin-top: 26px;
+	}
+	.buttonDiv{
+		height: 30px;
+		width: 100px;
+		border-radius:3px;
+		border: 1px solid gray;
+		float: right;
+		margin-top: 15px;
+		margin-right: 30px;
+	}
+	.buttonDiv>.buttonText{
+		color: white;
+		text-align: center;
+		font-size: large;
+		font-family:monospace;
+		margin-top: 5px;		
+	}
+	.buttonDiv:hover{
+		box-shadow: 0px 0px 3px gray;
+		cursor: pointer;
+	}
+	#advertiseDiv{
+		border: 1px solid white;
+		width:1349px;
+		height: 300px;
+		margin-top: 65px;
+		box-shadow: 0px 0px 10px gray;
+		background-image:url("../images/alacriti.jpg");
+		background-position: left;
+		  -webkit-filter: blur(0.5px);
+	}
+	#advertiseTextDiv{
+		width: 470px;
+		height: 200px;
+		margin-top: 80px;
+		top:40px;
+		margin-left: 30px;
+		position: absolute;
+	}
+	#advertiseTextDiv>#advertiseText{
+		color: white;
+		text-shadow:black;
+		text-align:center;
+		text-shadow: 0px 0px 9px orange;
+		font-size: 35px;
+		font-weight:normal;
+		font-family: fantasy;
+	}
+	#advertiseTextDiv>#demo{
+		margin-top: 0px;
+		margin-left: 0px;
+		border: 1px solid balck;
+		float:left;
+		margin-left: 180px;
+	}
+	#cards{
+		border: 1px solid white;
+		background-color:white;
+		height:300px;
+		width:1349px;
+		margin-top: 3px;
+	}
+	#cards>.card{
+		height: 250px;
+		width: 300px;
+		float:left;
+		margin-top: 25px;
+		margin-left: 110px;
+	}
+	#cards>.card>.cardHeader{
+		margin-top:50px;
+		margin-left:50px;
+		color:#4682B4;
+		font-size: 25px;
+		font-weight:bold;
+		font-family: sans-serif;
+	}
+	#cards>.card>.cardMatter{
+		margin-top:25px;
+		color:gray;
+		font-weight:bold;
+		font-family: sans-serif;
+		text-align: center;
+	}
+	
+	#footer{
+		background-color:#E8E8E8 ;
+		border: 1px solid white;
+		height:300px;
+		width:1349px;
+		margin-top: 3px;
+		margin-left: 0px
+	}
+	#footer>#footerImageDiv{
+		border:1px solid gray;
+		box-shadow: 0px 0px 10px gray;
+		background-image:url("http://i.telegraph.co.uk/multimedia/archive/02145/mon_2145956b.jpg");
+		background-position: top;
+		border-radius:100px;
+		height: 250px;
+		width: 300px;
+		float:left;
+		margin-top: 25px;
+		margin-left: 110px;
+	}
+	#footer>#footerTextHeader{
+		margin-top:70px;
+		color:#4682B4;
+		font-size: 30px;
+		font-weight:bold;
+		font-family: sans-serif;
+		margin-left: 600px;
+	}
+	#footer>.footerContact{
+		color:gray;
+		font-weight:bold;
+		font-family: sans-serif;
+		margin-left: 600px;
+	}
+</style>
+<meta charset="UTF-8">
+<title>Inventory Management</title>
+</head>
+<body>
+	<div id="advertiseDiv" ></div>
+	
+	<div id="advertiseTextDiv">
+		<p id="advertiseText">The smarter and easier way to manage your space.</p>
+		<div id="demo" class="buttonDiv"  > <p class="buttonText">Demo<p></div>
+	</div>
+	
+	<div id="cards">
+		<div class="card">
+		<p class="cardHeader">Why Office Space</p>
+		<p class="cardMatter">takjkfsdfasdasdfasd<br>fasdfasdfasdfasdfasdf<br>fjasffasfkas</p>
+		</div>
+		<div class="card">
+		<p class="cardHeader">Why Office Space</p>
+		<p class="cardMatter">takjkfsdfasdasdfasd<br>fasdfasdfasdfasdfasdf<br>fjasffasfkas</p>
+		</div>
+	<div class="card">
+		<p class="cardHeader">Why Office Space</p>
+		<p class="cardMatter">takjkfsdfasdasdfasd<br>fasdfasdfasdfasdfasdf<br>fjasffasfkas</p>
+		</div>
+		
+	</div>
+	
+	<div id="footer">
+		<div id="footerImageDiv"></div>
+		<p id="footerTextHeader">Alacriti Administrator</p>
+		<p class="footerContact">Name: xxx</p>
+		<p class="footerContact">ContactNo: 9848022338</p>
+		<p class="footerContact">Mail: xxx.yyy@alacriti.com</p>
+	</div>
+	
+	<div id="test"></div>
+		<div id="header">
+		<h1 id="title"> OfficeSpace </h1>
+		<div id="startButton" class="buttonDiv" style="background-color: #4682B4;"> <p class="buttonText">Start<p></div>
+		<p class="menu"> Prodect </p>
+		<p class="menu"> Why Officespace </p>
+		<p class="menu"> Customers </p>
+		<p class="menu"> Licensing & Technology </p>
+	</div>
+	
+	<script>
+		$("#startButton").click(function(){
+			$(location).attr('href', 'login.html');
+		});
+	</script>
+
+</body>
+</html>

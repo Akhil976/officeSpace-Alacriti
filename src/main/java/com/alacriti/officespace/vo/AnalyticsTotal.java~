@@ -1,0 +1,50 @@
+package com.alacriti.officespace.vo;
+
+public class AnalyticsTotal {
+	private int analyticsDay;
+	private int analyticsWeek;
+	private int analyticsMonth;
+	private int analyticsYear;
+
+	public AnalyticsTotal() {
+	}
+	public AnalyticsTotal(int alalyticsDay, int alalyticsWeek, int alalyticsMonth,
+			int alalyticsYear) {
+		super();
+		this.analyticsDay = alalyticsDay;
+		this.analyticsWeek = alalyticsWeek;
+		this.analyticsMonth = alalyticsMonth;
+		this.analyticsYear = alalyticsYear;
+	}
+	public int getAnalyticsDay() {
+		return analyticsDay;
+	}
+	public void setAnalyticsDay(int alalyticsDay) {
+		this.analyticsDay = alalyticsDay;
+	}
+	public int getAlalyticsWeek() {
+		return analyticsWeek;
+	}
+	public void setAnalyticsWeek(int alalyticsWeek) {
+		this.analyticsWeek = alalyticsWeek;
+	}
+	public int getAnalyticsMonth() {
+		return analyticsMonth;
+	}
+	public void setAnalyticsMonth(int alalyticsMonth) {
+		this.analyticsMonth = alalyticsMonth;
+	}
+	public int getAnalyticsYear() {
+		return analyticsYear;
+	}
+	public void setAnalyticsYear(int alalyticsYear) {
+		this.analyticsYear = alalyticsYear;
+	}
+	@Override
+	public String toString() {
+		return "AnalyticsTotal [alalyticsDay=" + analyticsDay
+				+ ", alalyticsWeek=" + analyticsWeek + ", alalyticsMonth="
+				+ analyticsMonth + ", alalyticsYear=" + analyticsYear + "]";
+	}
+	
+}
