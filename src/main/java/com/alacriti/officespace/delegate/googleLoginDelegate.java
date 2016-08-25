@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.alacriti.officespace.util.GenerateFtlResponse;
 import com.alacriti.officespace.util.LoginUtil;
 import com.alacriti.officespace.vo.LoginResponseVo;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
@@ -40,7 +41,6 @@ public class googleLoginDelegate {
 			  Payload payload = idToken.getPayload();
 			
 			  String userId = payload.getSubject();
-			  System.out.println("User ID: " + userId);
 			
 			  String email = payload.getEmail();
 			  boolean emailVerified = Boolean.valueOf(payload.getEmailVerified());
@@ -52,23 +52,18 @@ public class googleLoginDelegate {
 			  String givenName = (String) payload.get("given_name");
 			  
 			  if(email.contains("@alacriti.com")){
-				
 				LoginResponseVo loginResponseVo = new LoginResponseVo();
 				loginResponseVo.setSuccess(true);
 				loginResponseVo.setUserRole("employee");
 				loginResponseVo.setUserId(0);
 				
 				return LoginUtil.doLogin(request, loginResponseVo);
-				
-				
 			  }
 			  else{
-				  System.out.println("you are not an alacrity employee");
-				  return "you are not an alacrity employee";
+				  return GenerateFtlResponse.getOauthFailCode();
 			  }
 			
 		} else {
-		  System.out.println("Invalid ID token.");
 		}
 	} catch (GeneralSecurityException | IOException e) {
 		e.printStackTrace();

@@ -21,7 +21,7 @@ import javax.mail.internet.MimeMultipart;
 @SuppressWarnings("unused")
 public class EmailUtil {
 
-	public static boolean sendEmail(Session session,String toMail) {
+	public static boolean sendEmail(Session session,String toMail,String code) {
 		try {
 			MimeMessage msg = new MimeMessage(session);
 			// set message headers
@@ -35,7 +35,7 @@ public class EmailUtil {
 
 			msg.setSubject("This is replay for password reset", "UTF-8");
 
-			msg.setText("code", "UTF-8");
+			msg.setText("OfficeSpace Verification code: "+code, "UTF-8");
 
 			msg.setSentDate(new Date());
 

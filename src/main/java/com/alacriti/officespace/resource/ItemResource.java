@@ -28,7 +28,6 @@ public class ItemResource {
 	@GET
 	@Path("{itemId}")
 	public String abc(@PathParam("itemId") int itemId){
-		System.out.println("item Resource");
 		return "The item id is "+itemId;
 	}
 	@POST

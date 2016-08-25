@@ -6,11 +6,10 @@ import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 
-
 public class TLSsend {
-public boolean sending(String toMail){
-	final String fromEmail = "from@gmail.com"; //requires valid gmail id
-	final String password = "*********"; // correct password for gmail id
+public static boolean sending(String toMail,String code){
+	final String fromEmail = "akhil.rgukt976@gmail.com"; //requires valid gmail id
+	final String password = "gakhil@8014"; // correct password for gmail id
 
 	System.out.println("TLSEmail Start");
 	Properties props = new Properties();
@@ -29,9 +28,7 @@ public boolean sending(String toMail){
 	Session session = Session.getInstance(props, auth);
 	
 	
-	return EmailUtil.sendEmail(session,toMail);
-	
-	
+	return EmailUtil.sendEmail(session,toMail,code);
 
 }
 }

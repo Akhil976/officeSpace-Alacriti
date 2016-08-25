@@ -23,11 +23,8 @@ public class LoginUtil {
 			sessionObject.setUserRole(loginResponseVo.getUserRole());
 
 			session.setAttribute("sessionObject", sessionObject);
-	    	System.out.println("session created");
 	    	
 	    	ItemsMenuResource itemMenuResource = new ItemsMenuResource();
-	    	System.out.println("going to item Menu resource");
-	    	System.out.println(itemMenuResource.getMenu());
 	    	return itemMenuResource.getMenu();
 	    	
 		}

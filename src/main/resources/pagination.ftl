@@ -1,6 +1,6 @@
 <style>
 				.row{
-					width:900px;
+					width:500px;
 					height:50px;
 					border:0px solid black;
 				}
@@ -14,17 +14,18 @@
 					font-size: 20px;
 					text-align: center;
 					background-color: #cccccc;
+					
 				}
 				#pageBox{
 					border:0px solid black;
-					width:800px;
+					width:600px;
 					height:40px;
 					overflow:auto;
 					overflow-x:hidden;
 				}
 				#slidePage{
 					border:0px solid red;
-					width:800px;
+					width:600px;
 					height:100px;
 				}
 				.clear{
@@ -65,9 +66,7 @@
 					
 					<select id="paginationBy" name="paginationBy">
 						  <option>AnalyticsBy</option>
-						  <option value="week">Week</option>
 						  <option value="month">Month</option>
-						  <option value="year">Year</option>
 					</select><br>
 					
 					<div id="paginationcalBox">
@@ -80,20 +79,16 @@
 		   </div>
 		   <div class="clear"></div>
 
-		<div style="margin-left:100px;">
+		<div style="margin-left:310px;">
 			
 			
 			<div id="tableHead" class="headRow" style="color:green">
-				<div class="item">Item Id </div>
-				<div class="item">Category Id </div>
 				<div class="item">Date </div>
 				<div class="item">Consume Quantity </div>
 			</div>
 			
 			<#list paginationConsumeVo.itemConsumeList as item>
 				<div id="uniq_page" class="row">
-					<div class="item">${item.itemId}</div>
-					<div class="item">${item.categoryId} </div>
 					<div class="item">${item.date} </div>
 					<div class="item">${item.consumeAmount} </div>
 				</div>

@@ -31,13 +31,11 @@ public class LoginResource {
 						@FormParam("loginPass_word") String pass_word,
 						@Context HttpServletRequest request          )throws TemplateNotFoundException, MalformedTemplateNameException, ParseException, IOException, TemplateException
 	{
-		System.out.println("login resources");
 		LoginRequestVo loginInfo = new LoginRequestVo();
 		loginInfo.setEmail_id(email_id);
 		loginInfo.setPass_word(pass_word);
 		
 		LoginResponseVo loginResponseVo = LoginDelegate.login(loginInfo);
-		System.out.println("going to login util");
 		String ftlCode = LoginUtil.doLogin(request, loginResponseVo);
 		
 		return ftlCode;
@@ -47,7 +45,6 @@ public class LoginResource {
 	@Path("/google")
 	public String googleLogin(GoogleLoginRequest googleLoginRequest){
 		String id_token=googleLoginRequest.getId_token();
-		System.out.println(id_token);
 		return googleLoginDelegate.validation(request,id_token);
 		
 	}

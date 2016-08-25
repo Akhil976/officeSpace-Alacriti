@@ -93,4 +93,15 @@ public class ItemDetailsAdmin {
 		this.categoryList = categoryList;
 	}
 
+	@Override
+	public String toString() {
+		return "ItemDetailsAdmin [availableItems=" + availableItems
+				+ ", inventoryCapacity=" + inventoryCapacity
+				+ ", fillPercentage=" + fillPercentage + ", alalyticsDay="
+				+ alalyticsDay + ", alalyticsWeek=" + alalyticsWeek
+				+ ", alalyticsMonth=" + alalyticsMonth + ", alalyticsYear="
+				+ alalyticsYear + ", categoryList=" + categoryList + "]";
+	}
+	
+
 }

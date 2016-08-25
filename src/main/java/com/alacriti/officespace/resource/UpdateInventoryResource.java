@@ -77,7 +77,6 @@ public class UpdateInventoryResource {
 			@PathParam("updateCapacity") int newCapacity,
 			@Context HttpServletRequest request            ){
 		
-		System.out.println("update Capacity resource"+newCapacity);
 		UpdateCapacityVo updateCapacity = new UpdateCapacityVo();
 		updateCapacity.setCategoryId(categoryId);
 		updateCapacity.setItemId(itemId);

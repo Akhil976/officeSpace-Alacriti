@@ -20,6 +20,7 @@ import com.alacriti.officespace.vo.ItemMenuResponseVo;
 import com.alacriti.officespace.vo.ItemsListVo;
 import com.alacriti.officespace.vo.PageNumberVo;
 import com.alacriti.officespace.vo.PaginationConsumeVo;
+import com.alacriti.officespace.vo.ResponseVo;
 import com.alacriti.officespace.vo.SessionObject;
 
 import freemarker.template.Configuration;
@@ -77,8 +78,6 @@ public class GenerateFtlResponse {
 		StringWriter writer = new StringWriter();
 		
     	SessionObject sessionObject = (SessionObject) request.getSession().getAttribute("sessionObject");
-		System.out.println(sessionObject);
-		System.out.println("generating ftl response");
 		if(sessionObject.getUserRole().equals("admin")){
 			try {
 				template = cfg.getTemplate("adminInventory.ftl");
@@ -103,12 +102,10 @@ public class GenerateFtlResponse {
 				e.printStackTrace();
 			}
     	}
-    	System.out.println(writer.toString());
 		return writer.toString();
 	}
 
 	public static String getGraph(GraphObjectsVo graphObjectsVo) {
-		System.out.println("Generating ftl code");
 		if(graphObjectsVo.getGraphWeekVo()!=null){
 			
 			GraphWeekVo graphWeekVo = graphObjectsVo.getGraphWeekVo();
@@ -122,11 +119,8 @@ public class GenerateFtlResponse {
 			Template template;
 			StringWriter writer = new StringWriter();
 			try {
-				System.out.println("before");
 				template = cfg.getTemplate("graphWeek.ftl");
-				System.out.println("after");
 				template.process(daysUsageInWeek, writer);
-				System.out.println("after afete");
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (TemplateException e) {
@@ -150,11 +144,8 @@ public class GenerateFtlResponse {
 			Template template;
 			StringWriter writer = new StringWriter();
 			try {
-				System.out.println("before");
 				template = cfg.getTemplate("graphMonth.ftl");
-				System.out.println("after");
 				template.process(daysUsageInWeek, writer);
-				System.out.println("after afete");
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (TemplateException e) {
@@ -176,17 +167,13 @@ public class GenerateFtlResponse {
 			Template template;
 			StringWriter writer = new StringWriter();
 			try {
-				System.out.println("before");
 				template = cfg.getTemplate("graphYear.ftl");
-				System.out.println("after");
 				template.process(daysUsageInWeek, writer);
-				System.out.println("after afete");
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (TemplateException e) {
 				e.printStackTrace();
 			}
-			System.out.println(writer.toString());
 			return writer.toString();
 		}
 		
@@ -324,10 +311,6 @@ public class GenerateFtlResponse {
 		cfg.setClassForTemplateLoading(GenerateFtlResponse.class, "/");
 		cfg.setNumberFormat("0.######");
 		
-/*		Collection list = itemsMenuResponseVo.getMenu;
-		Map dataModel = new HashMap();
-		dataModel.put("Collection", list);
-*/
 		Map dataModel = new HashMap();
 		dataModel.put("itemsMenuResponseVo", itemsMenuResponseVo);
 		
@@ -337,7 +320,7 @@ public class GenerateFtlResponse {
 			
 			template = cfg.getTemplate("menu.ftl");
 			template.process(dataModel, writer);
-		
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (TemplateException e) {
@@ -364,6 +347,98 @@ public class GenerateFtlResponse {
 			
 			template = cfg.getTemplate("category.ftl");
 			template.process(dataModel, writer);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TemplateException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(writer.toString());
+		
+		return writer.toString();
+	}
+
+	public static String getRegistrationCode(ResponseVo responseVo) {
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_20);
+		cfg.setClassForTemplateLoading(GenerateFtlResponse.class, "/");
+		cfg.setNumberFormat("0.######");
+		
+		Template template;
+		StringWriter writer = new StringWriter();
+		try {
+			
+			template = cfg.getTemplate("registrationSuccess.ftl");
+			template.process(null, writer);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TemplateException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(writer.toString());
+		
+		return writer.toString();
+	}
+
+	public static String getOauthFailCode() {
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_20);
+		cfg.setClassForTemplateLoading(GenerateFtlResponse.class, "/");
+		cfg.setNumberFormat("0.######");
+		
+		Template template;
+		StringWriter writer = new StringWriter();
+		try {
+			
+			template = cfg.getTemplate("oauthFailResponse.ftl");
+			template.process(null, writer);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TemplateException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(writer.toString());
+		
+		return writer.toString();
+	}
+
+	public static String getVerificationCode() {
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_20);
+		cfg.setClassForTemplateLoading(GenerateFtlResponse.class, "/");
+		cfg.setNumberFormat("0.######");
+		
+		Template template;
+		StringWriter writer = new StringWriter();
+		try {
+			
+			template = cfg.getTemplate("checkVerificationCode.ftl");
+			template.process(null, writer);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TemplateException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(writer.toString());
+		
+		return writer.toString();
+	}
+
+	public static String getPasswordSuccessCode() {
+		Configuration cfg = new Configuration(Configuration.VERSION_2_3_20);
+		cfg.setClassForTemplateLoading(GenerateFtlResponse.class, "/");
+		cfg.setNumberFormat("0.######");
+		
+		Template template;
+		StringWriter writer = new StringWriter();
+		try {
+			
+			template = cfg.getTemplate("PasswordChanged.ftl");
+			template.process(null, writer);
 		
 		} catch (IOException e) {
 			e.printStackTrace();

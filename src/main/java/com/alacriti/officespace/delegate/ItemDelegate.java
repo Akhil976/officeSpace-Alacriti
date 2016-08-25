@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import com.alacriti.officespace.bo.impl.ItemBo;
+import com.alacriti.officespace.bo.ItemBo;
 import com.alacriti.officespace.util.DbConnection;
 import com.alacriti.officespace.vo.ItemDetailsAdmin;
 

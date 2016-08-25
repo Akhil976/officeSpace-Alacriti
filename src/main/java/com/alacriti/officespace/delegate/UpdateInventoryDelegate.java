@@ -3,8 +3,8 @@ package com.alacriti.officespace.delegate;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import com.alacriti.officespace.bo.impl.UpdateInventoryBo;
-import com.alacriti.officespace.dao.impl.UpdateInventoryDao;
+import com.alacriti.officespace.bo.UpdateInventoryBo;
+import com.alacriti.officespace.dao.UpdateInventoryDao;
 import com.alacriti.officespace.util.DbConnection;
 import com.alacriti.officespace.vo.AddItemVo;
 import com.alacriti.officespace.vo.CategoryVo;
@@ -16,7 +16,6 @@ import com.alacriti.officespace.vo.UpdateCapacityVo;
 public class UpdateInventoryDelegate {
 	static Connection connection = DbConnection.getConnection();
 	public static ResponseVo doUpdateAvailability(UpdateAvailabilityVo updateAvailability){
-		System.out.println("update Dlegate");
 		return UpdateInventoryBo.doUpdateAvailability(connection,updateAvailability);
 	}
 

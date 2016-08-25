@@ -24,7 +24,6 @@ public class AnalyticsResource {
 				@PathParam("calValue") String calenderValue,
 				@Context HttpServletRequest request
 				){
-			System.out.println("Analytics Resource");
 			AnalyticsRequestVo analyticsRequestVo = new AnalyticsRequestVo();
 			analyticsRequestVo.setItemId(itemId);
 			analyticsRequestVo.setAnalyticsBy(analyticsBy);
@@ -48,7 +47,6 @@ public class AnalyticsResource {
 			paginationRequestVo.setDate(date);
 			
 			PaginationConsumeVo paginationConsumeVo = AnalyticsDelegate.getPaginaion(paginationRequestVo);
-			System.out.println("paginationConsumeVo: "+paginationConsumeVo);
 			int uniqueId = paginationConsumeVo.getUniqueId();
 			int limit=paginationConsumeVo.getLimit();
 			int offset = paginationConsumeVo.getOffset();

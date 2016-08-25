@@ -1,5 +1,7 @@
 package com.alacriti.officespace.resource;
 
+import java.util.logging.Logger;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -7,6 +9,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 import com.alacriti.officespace.delegate.RegisterDelegate;
+import com.alacriti.officespace.util.GenerateFtlResponse;
 import com.alacriti.officespace.util.ResponseUtil;
 import com.alacriti.officespace.vo.RegisterUtil;
 import com.alacriti.officespace.vo.ResponseVo;
@@ -15,6 +18,7 @@ import com.alacriti.officespace.vo.ResponseVo;
 @Path("/getStarted")
 public class RegisterResource {
 	
+
 	
 	@GET
 	public String abc(){
@@ -31,8 +35,6 @@ public class RegisterResource {
 			@FormParam("confirmPass_word") String confirmPass_word,
 			@FormParam("user_role") String user_role
 			){
-		System.out.println("Register Resource");
-		System.out.println("first name is: "+first_name);
 		
 		RegisterUtil userInfo = new RegisterUtil();
 		userInfo.setFirst_name(first_name);
@@ -43,12 +45,9 @@ public class RegisterResource {
 		userInfo.setConfirmPass_word(confirmPass_word);
 		userInfo.setUser_role(user_role);
 		
-		System.out.println("Entered into resource layer");
-		System.out.println("password: "+pass_word);
-		System.out.println("userinfo pass: "+userInfo.getPass_word());
 		
 		ResponseVo responseVo =  RegisterDelegate.addUser(userInfo);
-		return ResponseUtil.getRegistrationResponse(responseVo);
-		
+		String ftlCode = GenerateFtlResponse.getRegistrationCode(responseVo);
+		return ftlCode;
 	}
 }

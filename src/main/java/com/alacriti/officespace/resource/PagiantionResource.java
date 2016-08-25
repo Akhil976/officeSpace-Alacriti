@@ -17,7 +17,6 @@ public class PagiantionResource {
 			@PathParam("pageNumber") int pageNumber,
 			@PathParam("totalPages") int totalPages){
 		
-		System.out.println("in pagination resource");
 		
 		PaginationConsumeVo paginationConsumeVo = new PaginationConsumeVo();
 		paginationConsumeVo.setUniqueId(uniqueId);
@@ -28,7 +27,6 @@ public class PagiantionResource {
 		
 		PaginationConsumeVo pageConsumeVo=PaginationDelegate.pagination(paginationConsumeVo);
 		
-		System.out.println("Pagination resource: "+pageConsumeVo);
 		
 		String ftlCode= GenerateFtlResponse.getPagiantion(pageConsumeVo);
 

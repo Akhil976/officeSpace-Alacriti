@@ -1,0 +1,643 @@
+body{
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+#outerBar {
+    position: relative;
+    width: 80%;
+    height: 25px;
+    background-color: grey;
+    margin-left: 110px;
+    border-radius:5px;
+}
+
+#label {
+    text-align: center; 
+    line-height: 30px;
+    color: white;
+}
+
+#header{
+	position: fixed;
+	width:1349px;
+	top: 0px;
+	left: 0px;
+	background-color: white ;
+		border:0px solid white;
+		box-shadow: 0px 0px 2px gray;
+		height:75px;
+		width:1365px;
+}
+#header>#title{
+	color: gray;
+	margin-top: 20px;
+	margin-left: 10px;
+	text-shadow: 0px 0px 2px black;
+	font-family: sans-serif;
+	font-size: 35px;
+	float: left;
+}
+#header>#statusBar{
+	width: 200px;
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 600px;
+}
+#header>#statusBar>#headerItem{
+	font-size: 35px;
+	margin-top: 0px;
+	text-align: center;
+	color:green;
+}
+.buttonDiv{
+	height: 30px;
+	width: 100px;
+	border-radius:3px;
+	border: 1px solid gray;
+	float: right;
+	margin-top: 25px;
+	margin-right: 30px;
+}
+.buttonDiv>.buttonText{
+	color: white;
+	text-align: center;
+	font-size: large;
+	font-family:monospace;
+	margin-top: 5px;		
+}
+.buttonDiv:hover{
+	box-shadow: 0px 0px 3px gray;
+	cursor: pointer;
+}
+#sideMenu{ 
+	margin-top: -5px;
+	margin-left: 0px;
+	border:1px solid white;
+	height: 600px;
+	width: 208px;
+	background-color:white;
+	border-radius:2px;
+	position: fixed;
+	padding-top: 10px;
+	overflow: scroll;
+}
+.menuHeader{
+	margin-top:6px;
+	padding-top:1px;
+	margin-bottom: 5px;
+	padding-left:20px;
+	margin-left:3px;
+	height:25px;
+	font-family: sans-serif;
+	font-size: 20px;
+	background-color: #A8A8A8  ;
+	border-radius:px;
+	box-shadow:0px 0px 5px black;
+	width:165px;
+}
+.menuItem{
+	padding-top:3px;
+	width:150px;
+	margin-top:2px;
+	border:1px solid white;
+	border-radius:5px;
+	height:25px;
+	font-family: sans-serif;
+	font-size: 18px;
+	padding-left: 18px;
+	margin-left:10px;
+	background-color: #C8C8C8 ;
+}
+.menuItem:hover{
+	box-shadow:0px 0px 10px green;
+	cursor: pointer;
+}
+
+#container{
+	border: 1px solid white;
+	margin-left:215px;
+	margin-top: 85px;
+	width:1130px;
+	background-position: left;
+	background-color: ;
+}
+
+#container>#editDiv{
+	height: 400px;
+	margin-top: 10px;
+	border: 0px solid gray;
+	border-radius:5px;
+	box-shadow:0px 0px 3px green;
+	background-color: ;
+	overflow: scroll;
+} 
+#editScrollDiv{
+	width: 3000px;
+	margin-top: 100px;
+}
+#updateInventory{
+	color:gray;
+	font-size: 30px;
+	font-family: sans-serif;
+	margin-left:450px;
+	padding-top: 10px;
+	position: absolute;
+	
+}
+#itemImageDiv{
+	width: 300px;
+	height: 300px;
+	border: 1px solid white;
+	margin-top:0px;
+	margin-right:20px;
+	float: right;
+}
+#itemImageDiv>#itemImage{
+	width: 250px;
+	height: 250px;
+	border: 1px solid white;
+}
+.editDivCard{
+	width:300px;
+	height:250px;
+	border:0px solid white;
+	border-radius:5px;
+	box-shadow:0px 0px 1px green	;
+	float:left;
+	margin-left: 50px;	
+}
+.editDivCard:HOVER{
+	box-shadow:0px 0px 5px gray;
+}
+#updateAction{
+	margin-left: 100px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 15px;
+	color: green;
+	text-align: center;
+}
+#updateNumber{
+	margin-left: 70px;
+	margin-top: 20px;
+	width: 160px;
+	height: 30px;
+	border-radius:4px;
+	font-size: 20px;
+	text-align: center;
+	color:green;
+}
+#doUpdateInventory{
+	margin-left: 100px;
+	margin-top: 20px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 17px;
+	color: green;
+	text-align: center;
+}
+#updateCapacity{
+	margin-left: 70px;
+	margin-top: 30px;
+	width: 160px;
+	height: 30px;
+	border-radius:4px;
+	font-size: 20px;
+	text-align: center;
+	color:green;
+}
+#doUpdateCapaciry{
+	margin-left: 100px;
+	margin-top: 20px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 17px;
+	color: green;
+	text-align: center;
+}
+#newCategory{
+		margin-left: 70px;
+	margin-top: 30px;
+	width: 160px;
+	height: 30px;
+	border-radius:4px;
+	font-size: 20px;
+	text-align: center;
+	color:green;
+}
+#addNewCategory{
+	margin-left: 100px;
+	margin-top: 20px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 17px;
+	color: green;
+	text-align: center;
+}
+
+.plusMinus{
+	display:inline;
+	margin-top:10px;
+	margin-left:60px;
+	font-family:sans-serif;
+	font-size: 17px;
+	color:gray;
+	border:1px solid white;
+	
+}
+#category{
+	margin-left: 100px;
+	margin-top:-20px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 15px;
+	color: green;
+	text-align: center;
+}
+#deleteCategory{
+	margin-left: 100px;
+	margin-top:25px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 15px;
+	color: green;
+	text-align: center;
+}
+#deleteItemCategory{
+	margin-left: 100px;
+	margin-top:5px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 15px;
+	color: green;
+	text-align: center;	
+}
+#deleteItemItem{
+	margin-left: 100px;
+	margin-top:15px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 15px;
+	color: green;
+	text-align: center;	
+}
+#doDeleteItem{
+	margin-left: 100px;
+	margin-top: 20px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 17px;
+	color: green;
+	text-align: center;
+}
+#doDeleteCategory{
+	margin-left: 100px;
+	margin-top: 10px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 17px;
+	color: green;
+	text-align: center;
+}
+#addItem{
+	margin-left: 70px;
+	margin-top: 10px;
+	width: 160px;
+	height: 30px;
+	border-radius:4px;
+	font-size: 20px;
+	text-align: center;
+	color:green;
+}
+#maxCapacity{
+	margin-left: 70px;
+	margin-top: 5px;
+	width: 160px;
+	height: 30px;
+	border-radius:4px;
+	font-size: 20px;
+	text-align: center;
+	color:green;
+}
+#doAddItem{
+	margin-left: 100px;
+	margin-top: 10px;
+	border-radius:4px;
+	width: 100px;
+	height:30px;
+	font-size: 17px;
+	color: green;
+	text-align: center;
+}
+.editDivCard>.editDivCardHeader{
+	color:gray;
+	font-size: 25px;
+	text-align:center;
+	font-family: sans-serif;
+	margin-top: 10px;
+}
+
+.clear{
+	clear: both;
+}
+
+
+#analytics{
+	height: 480px;
+	margin-top: 30px;
+	border: 0px solid gray;
+	border-radius:5px;
+	box-shadow:0px 0px 2px MidnightBlue;
+	background-color: ;
+}
+#analyticsTitle{
+	width:300px;
+	height:50px;
+	float:left;
+	margin-top: 20px;
+}
+#analyticsTitle>p{
+	color:gray;
+	font-size: 30px;
+	text-align:center;
+	font-family: sans-serif;
+	margin-top:10px;
+	margin-left:450px;
+	padding-top:0px;
+}
+#analyticsMenu{
+	height: 80px;
+	border: 1px solid white;
+}
+#analyticsMenu>#leftMenu{
+	border:1px solid white;
+	margin-top:20px;
+	width:1000px;
+	height:70px;
+	float:left;
+}
+#analyticsBy{
+	margin-left: 10px;
+	margin-top:12px;
+	border-radius:4px;
+	width: 120px;
+	height:30px;
+	font-size:15px;
+	color: MidnightBlue;
+	text-align: center;
+	float:left;
+}
+#paginationBy{
+	margin-left: 10px;
+	margin-top:-5px;
+	border-radius:4px;
+	width: 120px;
+	height:30px;
+	font-size:15px;
+	color: MidnightBlue;
+	text-align: center;
+	float:right;
+}
+#alalyticsCal{
+	height: 25px;
+	width:170px;
+	float:left;
+}
+#paginationCal{
+	height: 25px;
+	width:170px;
+}
+#calBox{
+	border:1px solid gray;
+	border-radius:2px;
+	margin-left:10px;
+	margin-top:-5px;
+	padding-top:0px;
+	height: 29px;
+	width:175px;
+	float:left;
+}
+#paginationcalBox{
+	border:1px solid gray;
+	border-radius:2px;
+	margin-left:10px;
+	margin-top:-30px;
+	height: 29px;
+	width:175px;
+	float:right;
+}
+#doAnalytics{
+	margin-left: 10px;
+	margin-top:-7px;
+	width:70px;
+	border-radius:4px;
+	height:30px;
+	font-size: 17px;
+	color: MidnightBlue;
+	text-align: center;
+}
+#doPagination{
+	margin-left: 10px;
+	width:70px;
+	border-radius:4px;
+	margin-top:-30px;
+	height:30px;
+	font-size: 17px;
+	color: MidnightBlue;
+	text-align: center;
+	float:right;
+}
+#analytics>.card{
+	width: 255px;
+	height: 245px;
+	margin-left:17px;
+	margin-top:20px;
+	border:1px dotted white;
+	border-radius:5px;
+	box-shadow:0px 0px 2px MidnightBlue ;
+	display: inline-block;
+}
+#analytics>.card:HOVER{
+	box-shadow:0px 0px 3px MidnightBlue;
+	cursor: pointer;
+}
+.cardHeader{
+	color:gray;
+	font-size: 25px;
+	text-align:center;
+	font-family: sans-serif;
+	margin-top: 10px;
+}
+.cardNumber{
+	color:gray;
+	font-size: 40px;
+	text-align:center;
+	font-family: monospace;
+	margin-top: 60px;
+	font-family: monospace;
+}
+#status{
+	margin-top: 0px;
+	height: 450px;
+	border: 0px solid gray;
+	border-radius:5px;
+	box-shadow:0px 0px 3px gray;
+	background-color: ;
+}
+#status>p{
+	color:gray;
+	font-size: 30px;
+	margin-left:450px;;
+	padding-top:20px;
+	font-family: sans-serif;
+}
+#status>#barIndex{
+	margin-top:1px;
+	width: 800px;
+	height: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#status>#barIndex>p{
+	display: inline-block;
+	margin-top: 0px;
+}
+#status>#barIndex>#dangerMark{
+	margin-left: 15%;
+}
+#status>#statusCards{
+	margin-top: 70px;
+}
+#status>#statusCards>.statusCard{
+	width:300px;
+	height:200px;
+	border:1px solid white;
+	border-radius:5px;
+	box-shadow:0px 0px 1px gray	;
+	display: inline-block;
+	margin-left: 50px;
+}
+#status>#statusCards>.statusCard:HOVER{
+	box-shadow:0px 0px 4px green;
+	cursor: pointer;
+}
+.statsCardHeader{
+	color:gray;
+	font-size: 25px;
+	text-align:center;
+	font-family: sans-serif;
+	margin-top: 10px;
+}
+.statusCardNumber{
+	color:gray;
+	font-size: 40px;
+	text-align:center;
+	font-family: sans-serif;
+	margin-top: 45px;
+	font-family: monospace;
+}
+#graph{
+	margin-top:30px;
+	border: 1px solid gray;
+	border-radius:5px;
+	box-shadow:0px 0px 0px black;
+	height:410px;
+}
+#graph>#graphHeader{
+	color:black;
+	font-size: 30px;
+	font-family: sans-serif;
+	display: inline-block;
+	margin-left: 300px;
+}
+#graph>#chartContainer{
+	height: 300px;
+	width: 900px;
+	
+}
+#graph>#graphMenu{
+	height:375px;
+	width:200px;
+	border-left: 1px dashed gray;
+	float:right;
+	margin-top: 2px;
+	background-color:white;
+	border-radius:2px;
+	padding-top: 10px;
+	overflow: visible;
+}
+#graph>#graphMenu>.graphMenuHead{
+	margin-top:13px;
+	margin-left:15px;
+	height:30px;
+	font-family: sans-serif;
+	font-size: 23px;
+}
+#graph>#graphMenu>.graphMenuItem{
+	width:150px;
+	margin-top:7px;
+	border:1px solid white;
+	border-radius:10px;
+	height:25px;
+	font-family: sans-serif;
+	font-size: 18px;
+	padding-left: 18px;
+	padding-top:5px;
+	margin-left:10px;
+	background-color: #C8C8C8 ;
+}
+#graph>#graphMenu>.graphMenuItem:HOVER{
+	background-color: gray;
+	cursor: pointer;
+}
+#graphAnalyticsBy{
+	margin-left: 20px;
+	margin-top:12px;
+	border-radius:4px;
+	width: 150px;
+	height:30px;
+	font-size:15px;
+	color: green;
+	text-align: center;
+	float:left;
+}
+#graphCalBox{
+	border:1px solid white;
+	border-radius:2px;
+	margin-left:20px;
+	margin-top:10px;
+	padding-top:0px;
+	height: 29px;
+	width:150px;
+	float:left;
+}
+#graphAnalalyticsCal{
+	margin-top: 0px;
+	height: 29px;
+	width:149px;
+}
+#doGraphAnalytics{
+	margin-left: 20px;
+	margin-top:10px;
+	width:150px;
+	border-radius:4px;
+	height:30px;
+	font-size: 17px;
+	color: green;
+	text-align: center;
+}
+#test{
+	height: 50px;
+}
+

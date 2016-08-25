@@ -66,6 +66,7 @@
 			</div>
 			<div class="editDivCard">
 				<p class="editDivCardHeader">Add Item</p>
+				<div class="select">
 				<select id="category" name="category" class="categoryList" >
 						<option>Category</option>
 						<#list categoryList as category>		
@@ -73,6 +74,7 @@
 						</#list>
 						  
 				</select><br>
+				</div>
 				<input id ="addItem" name="addItem" type="text" placeholder="Item Name" style="font-size:20px;"/><br>
 				<input id ="maxCapacity" name="maxCapacity" type="number" placeholder="Max Capacity" style="font-size:20px;" /> <br>
 				<input id="doAddItem" type="button" value="Add Item">
@@ -81,26 +83,28 @@
 			<div class="editDivCard">
 				<p class="editDivCardHeader">Delete Category</p>
 				<p class="plusMinus" style="margin-left:85px;">Select Category</p><br>
+				<div class="select">
 				<select id="deleteCategory" name="category" class="categoryList">
 						<option>Category</option>
 						<#list categoryList as category>		
 							<option value="${category.categoryId}">${category.categoryName}</option>	
 						</#list>
 				</select><br>
+				</div>
 				<input id="doDeleteCategory" type="button" value="Delete">
 			</div>
 			
 			<div class="editDivCard">
 				<p class="editDivCardHeader">Delete Item</p>
+				<div class="select">
 				<select id="deleteItemCategory" name="category" class="categoryList">
 						<option>Category</option>
 						<#list categoryList as category>		
 							<option value="${category.categoryId}">${category.categoryName}</option>	
 						</#list>
 				</select><br>
-				<select id="deleteItemItem" name="category" >
+				</div>
 				
-				</select><br>
 				<input id="doDeleteItem" type="button" value="Delete">
 			</div>
 			
@@ -130,7 +134,7 @@
 					
 					
 					<select id="paginationBy" name="paginationBy">
-						  <option>AnalyticsBy</option>
+						  <option>Usage</option>
 						  <option value="month">Month</option>
 					</select><br>
 					

@@ -5,7 +5,7 @@ import java.sql.Connection;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.alacriti.officespace.bo.impl.LoginBo;
+import com.alacriti.officespace.bo.LoginBo;
 import com.alacriti.officespace.util.DbConnection;
 import com.alacriti.officespace.vo.LoginRequestVo;
 import com.alacriti.officespace.vo.LoginResponseVo;
@@ -20,7 +20,6 @@ public class LoginDelegate {
 
 	public static LoginResponseVo login( LoginRequestVo login) throws TemplateNotFoundException, MalformedTemplateNameException, ParseException, IOException, TemplateException {
 		Connection connection = DbConnection.getConnection();
-		System.out.println("in delegate");
 		return LoginBo.login(connection,login);
 	}
 }

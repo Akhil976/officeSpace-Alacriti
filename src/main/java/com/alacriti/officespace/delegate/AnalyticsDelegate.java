@@ -2,7 +2,7 @@ package com.alacriti.officespace.delegate;
 
 import java.sql.Connection;
 
-import com.alacriti.officespace.bo.impl.AnalyticsBo;
+import com.alacriti.officespace.bo.AnalyticsBo;
 import com.alacriti.officespace.util.DbConnection;
 import com.alacriti.officespace.vo.AnalyticsRequestVo;
 import com.alacriti.officespace.vo.AnalyticsTotal;

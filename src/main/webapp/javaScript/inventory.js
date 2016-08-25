@@ -11,16 +11,21 @@ $(document.body).on('click', ".menuHeader" ,function(){
 	
 });
 
-$(document.body).on('click', ".categoryList" ,function(){
-	
-	
-});
+/*$(document.body).on('click', ".select" ,function(){
+    $.ajax({
+    	type: "POST",
+		url: "http://localhost:8080/OfficeSpace/web/update/categoryList",
+		success: function(result){
+			$(".categoryList").html(result);
+    	}
+    });
+});*/
 
 $(document.body).on('click', "#logout" ,function(){
 	
     $.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/logout",
+		url: "/OfficeSpace/web/logout",
 		success: function(result){
 			window.location.href = result;
     	}
@@ -34,19 +39,22 @@ $(document.body).on('click', '#doUpdateInventory' ,function(){
 		var updateAmount = $("#updateNumber").val();
 		$.ajax({
 	    	type: "POST",
-			url: "http://localhost:8080/OfficeSpace/web/update/availability/"+categoryId+"/"+itemId+"/"+updateAmount+"/"+updateAction,
+			url: "/OfficeSpace/web/update/availability/"+categoryId+"/"+itemId+"/"+updateAmount+"/"+updateAction,
 			success: function(result){
 				alert(result);
+				ajaxCall();
 	    	}
 	    });
-	    $.ajax({
-	    	type: "POST",
-			url: "http://localhost:8080/OfficeSpace/web/item/"+itemId,
-			success: function(result){
-	    		$("#container").html(result);
-	    	}
-	    });
-	    
+		
+		function ajaxCall(){
+		    $.ajax({
+		    	type: "POST",
+				url: "/OfficeSpace/web/item/"+itemId,
+				success: function(result){
+					$("#container").html(result);
+		    	}
+		    });
+		}
 	    
 	    $("#innerBar").attr('style', 'background-color : red !important');
 	}
@@ -58,7 +66,7 @@ $(document.body).on('click', '#doUpdateCapaciry' ,function(){
 	var updateCapacity = $("#updateCapacity").val();
     $.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/update/capacity/"+categoryId+"/"+itemId+"/"+updateCapacity,
+		url: "/OfficeSpace/web/update/capacity/"+categoryId+"/"+itemId+"/"+updateCapacity,
 		success: function(result){
 			alert(result);
     	}
@@ -79,11 +87,10 @@ $(document.body).on('click', '#addNewCategory' ,function(){
 	var newCategoryName = $("#newCategory").val();
 	$.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/update/addCategory/"+newCategoryName,
+		url: "/OfficeSpace/web/update/addCategory/"+newCategoryName,
 		success: function(result){
 			alert(result);
 				
-    		
     	}
     });
 });
@@ -93,14 +100,13 @@ $(document.body).on('click', '#doAddItem' ,function(){
 	var newItemName = $("#addItem").val();
 	var maxCapacity = $("#maxCapacity").val();
 	var selectedCategotyId = $("#category").val();
-	alert(selectedCategotyId);
 	/*	if(category=="stationary") selectedCategotyId=1;
 	else if(category=="cleaning") selectedCategotyId=2;
 	else if(category=="pantry") selectedCategotyId=3;
 	else if(category=="system") selectedCategotyId=4;*/
 	$.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/update/addItem/"+selectedCategotyId+"/"+newItemName+"/"+maxCapacity,
+		url: "/OfficeSpace/web/update/addItem/"+selectedCategotyId+"/"+newItemName+"/"+maxCapacity,
 		success: function(result){
 			$("#sideMenu").html(result);
     	}
@@ -110,10 +116,9 @@ $(document.body).on('click', '#doAddItem' ,function(){
 $(document.body).on('click', '#doDeleteCategory' ,function(){
 	
 	var categoryId = $("#deleteCategory").val();
-	alert(categoryId);
 	$.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/update/deleteCategory/"+categoryId,
+		url: "/OfficeSpace/web/update/deleteCategory/"+categoryId,
 		success: function(result){
 			alert("Deleted Successfully");
 			$("#sideMenu").html(result);ss
@@ -122,7 +127,7 @@ $(document.body).on('click', '#doDeleteCategory' ,function(){
 	
     $.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/update/categoryList",
+		url: "/OfficeSpace/web/update/categoryList",
 		success: function(result){
 			$(".categoryList").html(result);
     	}
@@ -137,7 +142,7 @@ $(document.body).on('change', '#deleteItemCategory' ,function(){
 	var categoryId = $("#deleteItemCategory").val();
 	$.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/update/ajaxItem/"+categoryId,
+		url: "/OfficeSpace/web/update/ajaxItem/"+categoryId,
 		success: function(result){
     		$("#deleteItemItem").html(result);
     	}
@@ -150,7 +155,7 @@ $(document.body).on('click', '#doDeleteItem' ,function(){
 	var deleteItemId = $("#deleteItemItem").val();
 	$.ajax({
     	type: "POST",
-    	url: "http://localhost:8080/OfficeSpace/web/update/deleteItem/"+categoryId+"/"+deleteItemId,
+    	url: "/OfficeSpace/web/update/deleteItem/"+categoryId+"/"+deleteItemId,
 		success: function(result){
 			$("#sideMenu").html(result);
     	}
@@ -195,14 +200,11 @@ $(document.body).on('change', '#paginationBy' ,function(){
     }
 });
 $(document.body).on('click', '#doAnalytics' ,function(){
-		alert("go clicked");
 		var analyticsBy = $("#analyticsBy").val();
 		var calValue = $("#alalyticsCal").val();
-		alert($("#alalyticsCal").val());
-		alert("http://localhost:8080/OfficeSpace/web/analytics/"+itemId+"/"+analyticsBy+"/"+calValue);
 	    $.ajax({
 	    	type: "POST",
-			url: "http://localhost:8080/OfficeSpace/web/analytics/"+itemId+"/"+analyticsBy+"/"+calValue,
+			url: "/OfficeSpace/web/analytics/"+itemId+"/"+analyticsBy+"/"+calValue,
 			success: function(result){
 				$("#analytics").html(result);
 	    	}
@@ -210,13 +212,11 @@ $(document.body).on('click', '#doAnalytics' ,function(){
 		
 });
 $(document.body).on('click', '#doPagination' ,function(){
-	alert("go clicked");
 	var analyticsBy = $("#paginationBy").val();
 	var calValue = $("#paginationCal").val();
-	alert("http://localhost:8080/OfficeSpace/web/analytics/pagination/"+itemId+"/"+analyticsBy+"/"+calValue);
     $.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/analytics/pagination/"+itemId+"/"+analyticsBy+"/"+calValue,
+		url: "/OfficeSpace/web/analytics/pagination/"+itemId+"/"+analyticsBy+"/"+calValue,
 		success: function(result){
     		$("#analytics").html(result);
     	}
@@ -226,11 +226,10 @@ $(document.body).on('click', '#doPagination' ,function(){
 $(document.body).on('click', '.numberDiv' ,function(){
 	var details = $(this).attr("id");
 	var detailsList = details.split("_");
-	alert(detailsList);
 	
 	$.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/getPagination/"+detailsList[0]+"/"+detailsList[1]+"/"+detailsList[2]+"/"+detailsList[3]+"/"+detailsList[4],
+		url: "/OfficeSpace/web/getPagination/"+detailsList[0]+"/"+detailsList[1]+"/"+detailsList[2]+"/"+detailsList[3]+"/"+detailsList[4],
 		success: function(result){
     		$("#analytics").html(result);
     	}
@@ -264,7 +263,7 @@ $(document.body).on('click', '#doGraphAnalytics' ,function(){
 	}
 	$.ajax({
     	type: "POST",
-		url: "http://localhost:8080/OfficeSpace/web/graphAnalytics/"+itemId+"/"+graphAnalyticsBy+"/"+graphCalValue,
+		url: "/OfficeSpace/web/graphAnalytics/"+itemId+"/"+graphAnalyticsBy+"/"+graphCalValue,
 		success: function(result){
     		$("#graph").html(result);
     	}
@@ -287,7 +286,7 @@ function getDateOfISOWeek(w, y) {
 
 
 //Stationary
-	$(".menuItem").click(function(){
+	$(document.body).on("click",".menuItem",function(){
 		$(".menuItem").css("background-color","#C8C8C8");
 		$(this).css("background-color","green");
 		var catg_id=$(this).attr('id');
@@ -295,7 +294,7 @@ function getDateOfISOWeek(w, y) {
 		itemId=catg_idList[1];
 		categoryId=catg_idList[0];
 		$("#headerItem").text(catg_idList[2]);
-		var requestUrl="http://localhost:8080/OfficeSpace/web/item/"+itemId;
+		var requestUrl="/OfficeSpace/web/item/"+itemId;
 		var id= "#"+itemId;
 		id=id.replace(/,/g, "");
 		

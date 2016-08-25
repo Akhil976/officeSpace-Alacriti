@@ -2,7 +2,7 @@ package com.alacriti.officespace.delegate;
 
 import java.sql.Connection;
 
-import com.alacriti.officespace.bo.impl.CheckBo;
+import com.alacriti.officespace.bo.CheckBo;
 import com.alacriti.officespace.util.DbConnection;
 import com.alacriti.officespace.vo.UpdateAvailabilityVo;
 import com.alacriti.officespace.vo.UpdateCapacityVo;

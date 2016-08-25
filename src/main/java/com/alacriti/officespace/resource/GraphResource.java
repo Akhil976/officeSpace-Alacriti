@@ -20,7 +20,6 @@ public class GraphResource {
 			@PathParam("graphAnalyticsBy") String graphAnalyticsBy,
 			@PathParam("graphCalValue") String graphCalValue
 			){
-		System.out.println("graph Resource");
 		GraphAnalyticsRequestVo graphAnalyticsRequest = new GraphAnalyticsRequestVo();
 		graphAnalyticsRequest.setItemId(itemId);
 		graphAnalyticsRequest.setGraphAnalyticsBy(graphAnalyticsBy);

@@ -20,9 +20,7 @@
 					
 					<select id="paginationBy" name="paginationBy">
 						  <option>AnalyticsBy</option>
-						  <option value="week">Week</option>
 						  <option value="month">Month</option>
-						  <option value="year">Year</option>
 					</select><br>
 					
 					<div id="paginationcalBox">

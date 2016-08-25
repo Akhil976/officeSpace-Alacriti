@@ -21,16 +21,13 @@ public class RequestFilter implements ContainerRequestFilter {
 		
 		HttpSession session = httpServletRequest.getSession(false);
 		
-		if(requestPath.contains(loginPath) || requestPath.contains(registrationPath)){
-			System.out.println("int if");
+		if(requestPath.contains(loginPath) || requestPath.contains(registrationPath) || requestPath.contains("forgotPassword")){
 			return ;
 		}
 		else if(session != null){
-			System.out.println("in else if");
 			return;
 		}
 		else{
-			System.out.println("Invalied Request: Filter.");
 			request.abortWith(Response.status(Response.Status.FORBIDDEN).entity("/OfficeSpace/html/login.html").build());
 		}
 	}
